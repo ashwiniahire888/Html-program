@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Border-Property Demo
+    </title>
+    <style>
+        .border
+        {
+            width: 60px;
+            text-align: center;
+            border-style: double;
+            border-width: 10px;
+            border-color:red;
+            border-bottom:10px Solid purple;           
+        }
+        .border:hover
+        {
+            color:blue;
+            border-top:10px double blue;
+        }
+        .borderr
+        {
+            border:50px double purple;
+            width: 200px;
+            height: 20px;
+            border-radius: 5px 30px 15px 40px;
+        }
+
+        .img
+        {
+            height: 300px;
+            width: 500px;
+            border:10px solid black;
+            border-radius: 60px;
+        }
+        img:hover
+        {
+          border:2px groove white;
+          border-radius: 800px;
+
+        }
+        .img1
+        {
+            height: 207px;
+            width: 203px;
+            border:10px solid black;
+            border-radius: 60px;
+        }
+    </style>
+</head>
+<body>
+    <!----border -->
+   <marquee  behavior="alternate" scrollamount="20px"><p class="border">Welcome</p></marquee>
+    <!-----border-radius-->
+    <p class="borderr">Vaishali Ramesh Bhujbal</p>
+    <!------img------>
+    <img src="F:\images\dest1.jpg" class="img">
+    <img src="F:\images\Logo.jpg" class="img1">
+</body>
+</html>
