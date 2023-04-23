@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>Form Demo</title>
+    </head>
+    <body>
+
+        <!---First Form-->
+        <div style="background-color:brown; color:white;">
+        <h1 style="background-color: blue; color:aliceblue">First simple Form</h1>
+        <form action="insert.php" method="post">
+        NAME:<input type="text"><br><br>
+        MOBILE:<input type="text"><br><br>
+        DOB:<input type="text"><br><br>
+        GENDER:<input type="radio">Male
+                <input type="radio">Female<br><br>
+        ADDRESS:<input type="textbox"><br><br>
+        COURSE:<select>
+            <option>HTML</option>
+            <option>JAVASCRIPT</option>
+            <option>BOOTSRAP</option>
+            <option>CSS</option>
+        </select><br>
+        <input type="checkbox">Term & Condition<br><br>
+        <input type="submit">
+        </form>
+    </div>
+<!-----Second Form-->
+<h1 style="background-color: blue; color:aliceblue">second Form with calender</h1>
+        <form action="insert.php" method="post">
+            NAME:<input type="text"><br><br>
+            MOBILE:<input type="text"><br><br>
+            DOB:<input type="date"><br><br>
+            GENDER:<input type="radio">Male
+                    <input type="radio">Female<br><br>
+            ADDRESS:<input type="textbox"><br><br>
+            COURSE:<select>
+                <option>HTML</option>
+                <option>JAVASCRIPT</option>
+                <option>BOOTSRAP</option>
+                <option>CSS</option>
+            </select><br>
+            <input type="checkbox">Term & Condition<br><br>
+            <input type="Submit">
+            </form>
+
+<!-----Third Form-->
+<h1 style="background-color: blue; color:aliceblue">Third Form</h1>
+<form action="insert.php" method="post">
+    NAME:<input type="text" name="name" value=""><br><br>
+    MOBILE:<input type="text" name="name" value=""><br><br>
+    DOB:<input type="date" name="name" value=""><br><br>
+    GENDER:<input type="radio" name="name" value="">Male
+            <input type="radio" name="name" value="">Female<br><br>
+    ADDRESS:<input type="textbox" name="name" value=""><br><br>
+    COURSE:<select name="name" value="">
+        <option>HTML</option>
+        <option>JAVASCRIPT</option>
+        <option>BOOTSRAP</option>
+        <option>CSS</option>
+    </select><br>
+    <input type="checkbox">Term & Condition<br><br>
+    <input type="Submit">
+    </form>
+
+<!-----Fourth Form-->
+<h1 style="background-color: blue; color:aliceblue">Fourth Form with placeholder</h1>
+<form action="insert.php" method="post">
+    NAME:<input type="text" name="name" value="" placeholder="Enter Your Name"><br><br>
+    MOBILE:<input type="text" name="name" value="" placeholder="Enter Your Mobile No"><br><br>
+    DOB:<input type="date" name="name" value="" ><br><br>
+    GENDER:<input type="radio" name="name" value="">Male
+            <input type="radio" name="name" value="">Female<br><br>
+    ADDRESS:<input type="textbox" name="name" value=""placeholder="Enter Your Address"><br><br>
+    COURSE:<select name="name" value="">
+        <option>HTML</option>
+        <option>JAVASCRIPT</option>
+        <option>BOOTSRAP</option>
+        <option>CSS</option>
+    </select><br>
+    <input type="checkbox">Term & Condition<br><br>
+    <input type="Submit">
+    </form>
+
+
+<!-----Fifth Form-->
+<h1 style="background-color: blue; color:aliceblue">Fifth Form with validation</h1>
+<form action="insert.php" method="post">
+    NAME:<input type="text" name="name" value="" placeholder="Enter Your Name" maxlength="25" minlength="4" pattern="[a-zA-Z]{10}" required><br><br>
+    MOBILE:<input type="text" name="name" value="" placeholder="Enter Your Mobile No" maxlength="10" minlength="10"  pattern="[0-9]{10}" required><br><br>
+    DOB:<input type="date" name="name" value=""  max="2022-12-31" min="1990-01-01" required><br><br>
+    GENDER:<input type="radio" name="name" value="">Male
+            <input type="radio" name="name" value="" checked>Female<br><br>
+    ADDRESS:<input type="textbox" name="name" value=""placeholder="Enter Your Address" required><br><br>
+    COURSE:<select name="name" value="" required>
+        <option>HTML</option>
+        <option selected>JAVASCRIPT</option>
+        <option>BOOTSRAP</option>
+        <option>CSS</option>
+    </select><br>
+    <input type="checkbox" required>Term & Condition<br><br>
+    <input type="Submit">
+    </form>
+
+
+    
+    </body>
+</html>
