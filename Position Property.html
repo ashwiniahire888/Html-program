@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Position Property
+    </title>
+    <style>
+        .absolute
+        {
+            background-color: peru;
+            height: 100px;
+            width: 100px;
+            border-radius: 10px 40px;
+            position:absolute;
+            right: 100px;
+            bottom: 10px;
+        }
+        .img
+        {
+            height: 200px;
+            width: 200px;
+            display:block;
+            margin:auto;
+            border: 20px groove brown;
+            
+        }
+        .a
+        {
+            background-color: blueviolet;
+            height: 100px;
+            width: 100px;
+            float:left;
+            position:relative;
+        }
+        .a1
+        {
+            background-color: green;
+            height:80px;
+            width: 80px;
+            float:left;
+            position: absolute;
+            right: 10px;
+            left:10px;
+            top:10px;   
+        }
+
+        .b
+        {
+            background-color: purple;
+            height: 200px;
+            width: 200px;
+            float: left;
+        }
+        .fixed
+        {
+            background-color:blue;
+            height: 50px;
+            width: 200px;
+            position:fixed;
+            top:10px;
+        }
+        .fixed:hover
+        {
+            background-color:yellow;
+            height: 80px;
+            width: 400px;
+            position:fixed;
+            top:10px;
+        }
+        .fixed1
+        {
+            background-color: black;
+            height: 600px;
+            float:left;
+            width: 100px;
+        }
+        .sticky
+        {
+            background-color:darksalmon;
+            height: 50px;
+            width:400px;
+            float:left;
+            position:sticky;
+        }
+    </style>
+</head>
+<body>
+    <!------------absolute---------->
+    <div class="absolute"></div>
+    <img src="F:\images\splash.jpg" class="img"></img>
+    <!------relative------->
+    <div class="a">
+        <div class="a1"></div>
+    </div>
+    <div  class="b"></div>
+    <!----------fixed------->
+    <div class="fixed">
+        <p>Have a nice day</p>
+    </div>
+    <div class="fixed1">
+        <p>My name is Vaishali</p>
+    </div>
+    <!-------sticky------>
+    <p>I want to seeing you happy Beacuse seeing you smiling makes me happy</p>
+    <div class="sticky"></div>
+    <P>Have a Nice Day</P>
+</body>
+</html>
