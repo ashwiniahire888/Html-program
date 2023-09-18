@@ -1,0 +1,21 @@
+
+
+<!DOCTYPE html>
+<html>
+	<style> p{ font-family:Arial,helvetica,Times New Roman, sans-serif; color:Red}
+	h1{ font-family:Arial,helvetica,Times New Roman, sans-serif; color:Red}
+	</style>
+	<h1> This is demo of Inline CSS</h1>
+<body>
+	<p style="font:50;color:black">
+	Using inline style sheets -or is that inline styles?
+	</p>
+	<p>
+	Using embbeded style sheets -or is that inline styles?
+	</p>
+<br>
+	<span style="font:15pt Arial;color:Red">
+	This is demo of Inline CSS
+	</span>
+</body>
+</html>
