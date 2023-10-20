@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validate() {
+
+/********************************Validation for Frist Name***************************************/    
+  let x = document.forms["myForm"]["fname"].value;
+  if (x == "") {
+    alert("First name must be filled out");
+    return false;
+  }
+
+  if (!/^[a-z A-z]*$/g.test(document.myForm.fname.value)) {
+        alert("Invalid characters for first name.");
+        document.myForm.fname.focus();
+        document.getElementById('fname').value = '';
+        return false;
+    }
+/***********************************Validation for Last Name******************************************/
+     x = document.forms["myForm"]["lname"].value;
+  if (x == "") {
+    alert("Last name must be filled out");
+    return false;
+  }
+
+  if (!/^[a-z A-z]*$/g.test(document.myForm.lname.value)) {
+        alert("Invalid characters for last name");
+        document.myForm.lname.focus();
+        document.getElementById('lname').value= '';
+        return false;
+    }
+
+/********************************* Validation for Email ******************/
+      x = document.forms['myForm']['email'].value;
+    if (x == null || x == "") {
+        alert("email id must be filled out");
+        document.myForm.email.focus();
+        return false;
+    }
+/****************************Validation for Mobile No*************************************/
+    x = document.forms['myForm']['phone'].value;
+    if (x == null || x == "") {
+        alert("phone  no must be filled out");
+        document.myForm.phone.focus();
+        return false;
+    }
+
+    if (!/^[0-9]*$/g.test(document.myForm.phone.value)) {
+        alert("Write only numbers for mobile number.");
+        document.myForm.phone.focus();
+        document.getElementById('phone').value = '';
+        return false;
+    }
+
+}
+</script>
+<style>
+    /* Styling the Body element i.e. Color, 
+        Font, Alignment */ 
+        body {
+            background-color:darkcyan;
+            font-family: 'Times New Roman';
+            text-align: center;
+        }
+        
+    /* Styling the Form (Color, Padding, Shadow) */
+        form {
+            background-color: white;
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            box-shadow: 2px 5px 10px black;
+        }
+
+        /* Styling form-control Class */
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+
+         /* Styling form-control Label */ 
+         .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+ 
+         /* Styling form-control input, 
+        select, textarea */
+        .form-control input,
+        .form-control select{
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 95%;
+        }
+
+         /* Styling form-control Radio 
+        button and Checkbox */
+        .form-control input[type="radio"]{
+            display: inline-block;
+            width: auto;
+        }
+
+        /* Styling Button */
+        button{
+            background-color: green;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 21px;
+            display:inline-block;
+            width: auto;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color:white;
+        }    
+
+        h6{
+            color: white;
+            font-family: 'Verdana';
+            text-align: center;
+        }
+
+</style>
+</head>
+<body>
+
+    <h1>Customer Survey Form</h1>
+    
+<form name="myForm" action="" onsubmit="return validate()" method="post">
+    <p style="text-align:end; font-size:small;"><span style="color: red;">*</span>All feilds are mandatory.</p>
+    <div class="form-control">
+        <label>First Name<span style="color: red;">*</span></label>
+        <input type="text" name="fname" placeholder="Enter your first name" > 
+    </div>
+
+    <div class="form-control">
+        <label>Last Name<span style="color: red;">*</span></label>    
+        <input type="text"name="lname" placeholder="Enter your last name"> 
+    </div>
+
+    <div class="form-control">
+        <label>DOB<span style="color: red;">*</span> </label>
+        <input type="date" name="dob" value="">    
+    </div>
+
+    <div class="form-control">
+        <label>Country<span style="color: red;">*</span> </label>
+        <!-- Dropdown options -->
+        <select name="country" id="country" >
+            <option>Select your country</option>
+            <option>India</option>
+            <option>Pak</option>
+            <option>Nepal</option>
+            <option>UK</option>
+            <option>China</option>
+            <option>Japan</option>
+            <option>Other</option>
+        </select>
+    </div>
+
+    <div class="form-control">
+        <!-- Input Type Radio Button -->
+        <label>Gender<span style="color: red;">*</span> </label>
+            <input type="radio" name="gender" id="male" >Male
+            <input type="radio" name="gender" id="female">Female
+        </label> 
+    </div>
+
+    <div class="form-control">
+        <label>Profession<span style="color: red;">*</span> </label>
+        <!-- Input Type Checkbox -->
+        <select name="profession" id="profession">
+            <option>Select your Profession</option>
+            <option>Student</option>
+            <option>Farmer</option>
+            <option>Teacher</option>
+            <option>Police</option>
+            <option>Actor</option>
+            <option>Engineer</option>
+            <option>Politician</option>
+            <option>Other</option>           
+         </select>
+    </div>
+
+    <div class="form-control">
+        <label>Email Id<span style="color: red;">*</span> </label>
+        <input type="text" name="email" placeholder="Enter your email id">
+    </div>
+
+    <div class="form-control">
+        <label>Mobile No<span style="color: red;">*</span> </label>
+        <input type="text" name="phone" placeholder="Enter your mobile number" maxlength="10">
+    </div>
+
+    <button type="submit" value="submit">Submit</button>
+    <button type="reset" value="reset" style="background-color: red;">Reset</button>
+</form>
+        <h6>@All right are reserved | Design by Ashwini Ahire.</h6>
+</body>
+</html>
