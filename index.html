@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Directory</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+</head>
+<body>
+    <h1>Member Directory</h1>
+    <ul id="memberTree">
+        <?php
+        // Your PHP code to connect to the database and fetch members recursively
+        // Replace with your database connection and recursive code
+        // Example: fetchMembersRecursive($conn, 0);
+		
+        // Database connection parameters
+        $host = "localhost";
+        $username = "root";
+        $password = "root"; // For Linux OS
+        $database = "gajendra"; // Replace with your actual database name
+
+        // Create a connection to the database using PDO
+        try {
+            $conn = new PDO("mysql:host=$host;dbname=$database", $username, $password);
+            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Connection failed: " . $e->getMessage();
+            exit;
+        }
+
+        // Define a function to fetch members and generate the tree structure
+        function fetchMembers($conn, $parentId = 0) {
+            $stmt = $conn->prepare("SELECT * FROM Members WHERE ParentId = :parentId");
+            $stmt->bindParam(':parentId', $parentId, PDO::PARAM_INT);
+            $stmt->execute();
+            $members = $stmt->fetchAll();
+
+            if (count($members) > 0) {
+                echo "<ul>";
+                foreach ($members as $member) {
+                    echo "<li>" . $member['Name'];
+                    fetchMembers($conn, $member['Id']); // Recursive call
+                    echo "</li>";
+                }
+                echo "</ul>";
+            }
+        }
+
+        // Call the function to fetch and display members
+        fetchMembers($conn);
+
+        // Close the database connection
+        $conn = null;
+        ?>
+        
+
+    </ul>
+
+    <!-- Add Member Button -->
+    <button id="addMemberButton">Add Member</button>
+
+    <!-- Fancybox Popup for Adding a New Member -->
+    <div id="addMemberPopup" style="display: none;">
+        <h2>Add New Member</h2>
+        <form id="addMemberForm">
+            <label for="parentMember">Parent Member:</label>
+            <select id="parentMember" name="parentMember">
+                <!-- Dynamically populate this dropdown with members from the database using PHP -->
+            </select>
+
+            <label for="memberName">Member Name:</label>
+            <input type="text" id="memberName" name="memberName">
+
+            <button type="submit" id="saveMemberButton">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- JavaScript for handling Add Member button click and Ajax call -->
+    <script>
+        $(document).ready(function () {
+            // Initialize Fancybox for the popup
+            $('#addMemberButton').click(function () {
+                $('#addMemberPopup').css('display', 'block');
+                $('#addMemberPopup').fancybox();
+            });
+
+            $('#addMemberForm').submit(function (e) {
+                e.preventDefault();
+
+                var parentMemberId = $('#parentMember').val();
+                var memberName = $('#memberName').val();
+
+                // Client-side validation for the name field
+                if (memberName === '' || !/^[a-zA-Z\s]+$/.test(memberName)) {
+                    alert('Please enter a valid member name with alphabetic characters.');
+                    return;
+                }
+
+                // Send an Ajax request to add_member.php for server-side processing
+                $.ajax({
+                    type: 'POST',
+                    url: 'add_member.php', // Create this file for server-side logic
+                    data: { parentMember: parentMemberId, memberName: memberName },
+                    success: function (data) {
+                        // Handle the response to append the new member to the tree structure
+                        // You should update the member tree here
+                        var newMember = $.parseJSON(data);
+                        var newMemberHTML = '<li>' + newMember.Name + '</li>';
+                        var parentElement = $('#memberTree li[data-member-id="' + parentMemberId + '"]');
+                        if (parentElement.find('ul').length === 0) {
+                            parentElement.append('<ul>' + newMemberHTML + '</ul>');
+                        } else {
+                            parentElement.find('ul').append(newMemberHTML);
+                        }
+                    }
+                });
+
+                // Close the Fancybox popup
+                $.fancybox.close();
+            });
+        });
+    </script>
+</body>
+</html>
