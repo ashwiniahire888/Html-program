@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+.about
+{
+	padding:30px;
+	position:relative;
+	top:95px;
+}
+
+.about_data
+{
+	box-shadow:.3px .2px 4px .2px;
+	background-color:#FFF;
+	padding:20px;
+	padding-top:30px;
+	padding-bottom:50px;	
+}
+
+
+.about_heading
+{
+	color:#666;
+	font-family:candara;
+	text-align:left;
+	position:relative;
+	left:50px;
+	padding:10px;
+	font-size:22px;
+}
+
+
+.about-img
+{
+	float:left;
+}
+
+h2
+{
+	font-family:Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, sans-serif;
+}
+
+.text1
+{
+	color:#666;
+	width:750px;
+	font-size:15px;
+	padding:10px;
+	position:relative;
+	margin-top:25px;
+	margin-left:250px;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+
+.text2
+{
+	color:#666;
+	font-size:15px;
+	padding:10px;
+	position:relative;
+	font-family:"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", Verdana, sans-serif;
+}
+
+.text3
+{
+	font-size:18px;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	color:#666;
+	margin-top:50px;
+}
+
+.text3_h3
+{
+	color:#333;
+	padding:5px;
+}
