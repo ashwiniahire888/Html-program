@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Overloading</title>
+</head>
+
+<body>
+    <script>
+        class parent1 {
+            no1 = 10;
+            no2 = 20;
+            no3 = 30;
+            no4 = 40;
+        }
+
+        class son1 extends parent1 {
+            addition() {
+
+                document.write(this.no1 + this.no2 + '<br>');
+            }
+
+            substraction() {
+
+                document.write(this.no4 - this.no2 + '<br>');
+            }
+
+            multiplication() {
+
+                document.write(this.no2 * this.no3 + '<br>');
+            }
+
+            operation(a, b, c) {
+                this.a = a;
+                this.b = b;
+                this.c = c;
+
+                document.write(a + b + '<br>');
+                document.write(c - a + '<br>');
+                document.write(b * c + '<br>');
+            }
+        }
+        var obj = new son1;
+        obj.addition();
+        obj.substraction();
+        obj.multiplication();
+
+        obj.operation(10, 20, 30);
+    </script>
+</body>

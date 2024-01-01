@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Overriding</title>
+</head>
+
+<body>
+    <script>
+        class parent1 {
+            home = 'sweet home';
+            car = 'BMW';
+            money = 3343422;
+
+            lifeinsurance() {
+                document.write(this.car + '<br>');
+            }
+        }
+        var obj = new parent1();
+        obj.lifeinsurance();
+
+        class son1 extends parent1 {
+            lifeinsurance() {
+                document.write(this.home + '<br>');
+            }
+        }
+        var obj1 = new son1();
+        obj1.lifeinsurance();
+    </script>
+</body>

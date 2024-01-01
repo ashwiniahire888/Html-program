@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Polymorphism
+    </title>
+</head>
+
+<body>
+    <script>
+        class parent1 {
+            no1 = 100;
+            no2 = 200;
+
+        }
+
+        class son1 extends parent1 {
+
+            addition() {
+                document.write(this.no1 + this.no2 + '<br>');
+            }
+
+            substraction() {
+                document.write(this.no1 - this.no2 + '<br>');
+
+            }
+
+            multiplication() {
+                document.write(this.no1 * this.no2 + '<br>');
+            }
+        }
+
+        var obj = new son1;
+        obj.addition();
+        obj.substraction();
+        obj.multiplication();
+    </script>
+</body>
